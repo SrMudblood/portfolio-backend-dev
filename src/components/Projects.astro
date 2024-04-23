@@ -1,0 +1,82 @@
+---
+import Django from "../icons/Django.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import PythonIcon from "../icons/Python.astro";
+import LinkButton from "./LinkButton.astro";
+
+const tags = {
+    PYTHON: {
+        icon: PythonIcon,
+        name: "Python",
+        class: "bg-blue-900",
+    },
+    DJANGO: {
+        icon: Django,
+        name: "Django",
+        class: "bg-green-900"
+    }
+};
+
+const projects = [
+    {
+        title: "TESTity API - Random Data Generator",
+        description:
+            "Random Data API designed to provide developers with easily accessible random data for testing purposes. Developers can request JSON objects representing various entities, such as people, generated with random information. This enables seamless testing of systems that rely on diverse data inputs.",
+        image: "/testify_api.webp",
+        tags: [tags.PYTHON,tags.DJANGO],
+        github: "https://github.com/SrMudblood/TESTify-API",
+        link: "",
+    },
+];
+---
+
+<div class="flex flex-col gap-y-16 mt-4">
+    {
+        projects.map(({ image, title, description, tags, link, github }) => (
+            <article class="flex flex-col space-x-0 space-y-8 md:flex-row md:space-x-8 md:space-y-0">
+                <div class="w-full md:w-1/2">
+                    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 ">
+                        <img
+                            alt={title}
+                            class="w-full rounded-3xl"
+                            loading="lazy"
+                            src={image}
+                        />
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 md:max-w-lg">
+                    <h3 class="text-2xl font-bold">
+                        {title}
+                    </h3>
+                    <div class="flex flex-wrap mt-2">
+                        <ul class="flex flex-row mb-2 gap-x-2">
+                            {tags.map((tag) => (
+                                <li>
+                                    <span
+                                        class={`flex gap-x-1 rounded-full ${tag.class} px-2 py-1 font-bold`}
+                                    >
+                                        <tag.icon class=" size-6 shadow-lg"/>
+                                        {tag.name}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <div class="mt-4 text-gray-400">
+                            {description}
+                        </div>
+                        <footer class="flex items-end justify-start mt-6 gap-x-4">
+                            {github && (
+                                <LinkButton href={github}>
+                                    <GitHubIcon class="size-6" />
+                                    Code
+                                </LinkButton>
+                            )}
+                        </footer>
+                    </div>
+                </div>
+            </article>
+        ))
+    }
+</div>
