@@ -1,12 +1,12 @@
 ---
-const { href } = Astro.props;
+const { href, name, color} = Astro.props;
 ---
 
 <a
   href={href}
   role="link"
-  target="_blank"
-  class="
+  download={name}]
+  class=`
     inline-flex 
     items-center 
     justify-center 
@@ -15,12 +15,12 @@ const { href } = Astro.props;
     text-base 
     text-white 
     transition 
-    bg-gray-800 
+    ${color} 
     border border-gray-600 
     text-md 
     hover:border-gray-900 
     max-w-fit rounded-xl 
-    active:bg-black"
+    active:bg-black`
 >
   <slot />
 </a>

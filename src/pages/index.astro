@@ -7,14 +7,24 @@ import CodeIcon from "../icons/CodeIcon.astro";
 import Projects from "../components/Projects.astro";
 import About from "../components/About.astro";
 import AboutIcon from "../icons/AboutIcon.astro";
+import Skills from "../components/Skills.astro";
+import SkillIcon from "../icons/SkillIcon.astro";
+import LinkButton from "../components/LinkButton.astro";
+import GitHub from "../icons/GitHub.astro";
+import Download from "../icons/Download.astro";
+import DownloadButton from "../components/DownloadButton.astro";
+import FAQ from "../components/FAQ.astro";
+import Footer from "../components/Footer.astro";
+import CopyToClipboard from "../components/CopyToClipboard.astro";
 
 const imgAlt = "Jesús Lozada";
+const email = "jeallomo@gmail.com";
 ---
 
 <Layout title="Jesus Lozada - Backend Developer">
 	<Header />
 	<main>
-		<SectionContainer class="pt-36 pb-10" id="home">
+		<SectionContainer class="pt-48 pb-10" id="home">
 			<div class="flex flex-row">
 				<img
 					class="size-32 rounded-full"
@@ -25,12 +35,12 @@ const imgAlt = "Jesús Lozada";
 					<h2 class="text-3xl font-bold">Hi, I'm</h2>
 					<h1 class="text-4xl">
 						<span class="text-3xl">name=</span>
-						<strong class=`text-[#fac100]`>Jesús</strong>
-						[<strong class="text-[#D1FA71]">"Lozada"</strong>]
+						<strong class=`text-[#FF8000]`>Jesús</strong>
+						[<strong class="text-[#FF8000]">"Lozada"</strong>]
 					</h1>
 					<Badge>
 						<CodeIcon />
-						<p>Back-end Dev</p>
+						<p class="text-[#ec7c26]">Back-end Dev</p>
 					</Badge>
 					<p class="text-pretty mt-4">
 						With experience in Python, Java, and JavaScript
@@ -40,22 +50,48 @@ const imgAlt = "Jesús Lozada";
 						Colombia, I'm excited to continue learning and growing
 						alongside a development team.
 					</p>
+					<div class="flex items-end justify-start mt-6 gap-x-4">
+						<LinkButton href="https://github.com/SrMudblood">
+							<GitHub class="size-6" />
+							Check out my Github!
+						</LinkButton>
+						<DownloadButton
+							href="/CV.pdf"
+							color="bg-[#FF8000]"
+							name="CV_Jesus_Lozada.pdf"
+						>
+							<Download class="size-6" />
+							Download my CV!
+						</DownloadButton>
+					</div>
+					<CopyToClipboard />
 				</div>
 			</div>
 		</SectionContainer>
-		<SectionContainer id="projects" class="pt-20">
+		<SectionContainer id="projects" class="pt-10 mt-16">
 			<div class="flex flex-row items-center">
 				<CodeIcon class="size-10" />
 				<h1 class="text-4xl font-bold ml-2">Projects</h1>
 			</div>
 			<Projects class="flex flex-col" />
 		</SectionContainer>
-		<SectionContainer id="about" class="pt-20 mt-10">
+		<SectionContainer id="skills" class="pt-20 mt-28">
+			<div class="flex flex-row items-center">
+				<SkillIcon class="size-10" />
+				<h1 class="text-4xl font-bold ml-2">My Skills</h1>
+			</div>
+			<Skills />
+		</SectionContainer>
+		<SectionContainer id="about" class="pt-20 mt-28">
 			<div class="flex flex-row items-center">
 				<AboutIcon class="size-10" />
 				<h1 class="text-4xl font-bold ml-2">About Me!</h1>
 			</div>
 			<About />
 		</SectionContainer>
+		<SectionContainer id="faqs" class="pt-20 my-28">
+			<FAQ />
+		</SectionContainer>
+		<Footer />
 	</main>
 </Layout>

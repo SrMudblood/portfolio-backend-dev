@@ -1,0 +1,181 @@
+---
+import AstroIcon from "../icons/AstroIcon.astro";
+import Django from "../icons/Django.astro";
+import Express from "../icons/Express.astro";
+import Go from "../icons/Go.astro";
+import Java from "../icons/Java.astro";
+import Javascript from "../icons/Javascript.astro";
+import Laravel from "../icons/Laravel.astro";
+import Nestjs from "../icons/Nestjs.astro";
+import Nodejs from "../icons/Nodejs.astro";
+import PHP from "../icons/PHP.astro";
+import Python from "../icons/Python.astro";
+import React from "../icons/React.astro";
+import Springboot from "../icons/Springboot.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import Typescript from "../icons/Typescript.astro";
+
+const tags = {
+    PYTHON: {
+        icon: Python,
+        name: "Python",
+        class: "bg-blue-900",
+    },
+    DJANGO: {
+        icon: Django,
+        name: "Django",
+        class: "bg-green-950",
+    },
+    JAVASCRIPT: {
+        icon: Javascript,
+        name: "JavaScript",
+        class: "bg-yellow-600 pl-3 gap-x-3",
+    },
+    TYPESCRIPT: {
+        icon: Typescript,
+        name: "TypeScript",
+        class: "bg-blue-900 pl-3 gap-x-3",
+    },
+    NODEJS: {
+        icon: Nodejs,
+        name: "Node.js",
+        class: "bg-green-950",
+    },
+    NESTJS: {
+        icon: Nestjs,
+        name: "Nest.js",
+        class: "bg-green-900",
+    },
+    EXPRESSJS: {
+        icon: Express,
+        name: "Express",
+        class: "bg-gray-700",
+    },
+    REACT: {
+        icon: React,
+        name: "React",
+        class: "bg-gray-800",
+    },
+    JAVA: {
+        icon: Java,
+        name: "Java",
+        class: "bg-red-800",
+    },
+    SPRINGBOOT: {
+        icon: Springboot,
+        name: "Spring",
+        class: "bg-green-900",
+    },
+    PHP: {
+        icon: PHP,
+        name: "PHP",
+        class: "bg-green-900",
+    },
+    LARAVEL: {
+        icon: Laravel,
+        name: "Lavarel",
+        class: "bg-green-900",
+    },
+    GO: {
+        icon: Go,
+        name: "Go (Golang)",
+        class: "bg-blue-600",
+    },
+    CSHARP: {
+        icon: Django,
+        name: "Django",
+        class: "bg-green-900",
+    },
+    ASTRO: {
+        icon: AstroIcon,
+        name: "Astro",
+        class: "bg-purple-700",
+    },
+    TAILWIND: {
+        icon: Tailwind,
+        name: "Tailwind CSS",
+        class: "bg-sky-950",
+    },
+};
+const skills = {
+    ACTUALLY: [tags.PYTHON, tags.DJANGO, tags.JAVA, tags.ASTRO, tags.TAILWIND],
+    LEARNING: [tags.JAVASCRIPT, tags.TYPESCRIPT, tags.NODEJS],
+    INTERESTED: [tags.EXPRESSJS, tags.GO, tags.REACT, tags.SPRINGBOOT],
+};
+---
+
+<fieldset class="mt-4">
+    <legend class="ml-8 text-2xl">Current Skills</legend>
+    <p>
+        A collection of programming languages, libraries, and frameworks I'm
+        comfortable using. These are the tools I rely on for building software
+        solutions.
+    </p>
+    <ul class="flex flex-row mx-4 my-4 gap-x-2">
+        {
+            skills.ACTUALLY.map((skill) => (
+                <li>
+                    <span
+                        class={`flex gap-x-1 rounded-full ${skill.class} px-2 py-1 font-bold text-white`}
+                    >
+                        <skill.icon class=" size-6 shadow-lg" />
+                        {skill.name}
+                    </span>
+                </li>
+            ))
+        }
+    </ul>
+</fieldset>
+<fieldset class="mt-4">
+    <legend class="ml-8 text-2xl">Current Learning</legend>
+    <p>
+        These are the new programming languages, libraries, and frameworks I'm
+        actively learning to enhance my skills and stay updated.
+    </p>
+    <ul class="flex flex-row mx-4 my-4 gap-x-2">
+        {
+            skills.LEARNING.map((skill) => (
+                <li>
+                    <span
+                        class={`flex gap-x-1 rounded-full ${skill.class} px-2 py-1 font-bold text-white`}
+                    >
+                        <skill.icon class=" size-6 shadow-lg" />
+                        {skill.name}
+                    </span>
+                </li>
+            ))
+        }
+    </ul>
+</fieldset>
+<fieldset class="mt-4">
+    <legend class="ml-8 text-2xl">Future Interests</legend>
+    <p>
+        These are the technologies I'm excited to explore for my professional growth.
+    </p>
+    <ul class="flex flex-row mx-4 my-4 gap-x-2">
+        {
+            skills.INTERESTED.map((skill) => (
+                <li>
+                    <span
+                        class={`flex gap-x-1 rounded-full ${skill.class} px-2 py-1 font-bold text-white`}
+                    >
+                        <skill.icon class=" size-6 shadow-lg" />
+                        {skill.name}
+                    </span>
+                </li>
+            ))
+        }
+    </ul>
+</fieldset>
+
+<style>
+    fieldset {
+        border: 2px groove;
+        border-color: rgba(211, 229, 214, 0.03);
+    }
+
+    p {
+        margin: 1em;
+        opacity: 0.5;
+    }
+</style>
