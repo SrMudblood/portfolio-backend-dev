@@ -1,4 +1,7 @@
 ---
+import Download from "../icons/Download.astro";
+import DownloadButton from "./DownloadButton.astro";
+
 const navItems = [
   {
     title: "Home",
@@ -24,13 +27,13 @@ const navItems = [
 ---
 
 <header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-4"
 >
-  <nav class="flex mt-2 rounded-xl">
+  <nav class="flex rounded-xl">
     {
       navItems.map((link) => (
         <a
-          class="relative block px-5 py-2 hover:text-[#E6C947]"
+          class="relative block px-2 py-2 hover:text-[#E6C947]"
           href={link.url}
         >
           {link.title}
@@ -38,6 +41,16 @@ const navItems = [
       ))
     }
   </nav>
+  <div class="absolute right-6 md:visible button">
+    <DownloadButton
+      href="/CV.pdf"
+      color="bg-[#FF8000]"
+      name="CV_Jesus_Lozada.pdf"
+    >
+      <Download class="size-4" />
+      Download my CV!
+    </DownloadButton>
+  </div>
 </header>
 
 <style>
@@ -45,6 +58,16 @@ const navItems = [
     animation: nav-shadown 1s linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
+  }
+
+  .button {
+    visibility: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .button {
+      visibility: visible;
+    }
   }
 
   @keyframes nav-shadown {

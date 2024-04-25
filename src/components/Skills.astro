@@ -19,27 +19,27 @@ const tags = {
     PYTHON: {
         icon: Python,
         name: "Python",
-        class: "bg-blue-900",
+        class: "",
     },
     DJANGO: {
         icon: Django,
         name: "Django",
-        class: "bg-green-950",
+        class: "",
     },
     JAVASCRIPT: {
         icon: Javascript,
         name: "JavaScript",
-        class: "bg-yellow-600 pl-3 gap-x-3",
+        class: "gap-x-2",
     },
     TYPESCRIPT: {
         icon: Typescript,
         name: "TypeScript",
-        class: "bg-blue-900 pl-3 gap-x-3",
+        class: "gap-x-3",
     },
     NODEJS: {
         icon: Nodejs,
         name: "Node.js",
-        class: "bg-green-950",
+        class: "",
     },
     NESTJS: {
         icon: Nestjs,
@@ -49,22 +49,22 @@ const tags = {
     EXPRESSJS: {
         icon: Express,
         name: "Express",
-        class: "bg-gray-700",
+        class: "",
     },
     REACT: {
         icon: React,
         name: "React",
-        class: "bg-gray-800",
+        class: "",
     },
     JAVA: {
         icon: Java,
         name: "Java",
-        class: "bg-red-800",
+        class: "",
     },
     SPRINGBOOT: {
         icon: Springboot,
         name: "Spring",
-        class: "bg-green-900",
+        class: "",
     },
     PHP: {
         icon: PHP,
@@ -79,7 +79,7 @@ const tags = {
     GO: {
         icon: Go,
         name: "Go (Golang)",
-        class: "bg-blue-600",
+        class: "",
     },
     CSHARP: {
         icon: Django,
@@ -89,12 +89,12 @@ const tags = {
     ASTRO: {
         icon: AstroIcon,
         name: "Astro",
-        class: "bg-purple-700",
+        class: "",
     },
     TAILWIND: {
         icon: Tailwind,
         name: "Tailwind CSS",
-        class: "bg-sky-950",
+        class: "",
     },
 };
 const skills = {
@@ -104,14 +104,14 @@ const skills = {
 };
 ---
 
-<fieldset class="mt-4">
+<fieldset class="mt-12 md:mt-4 w-full">
     <legend class="ml-8 text-2xl">Current Skills</legend>
     <p>
         A collection of programming languages, libraries, and frameworks I'm
         comfortable using. These are the tools I rely on for building software
         solutions.
     </p>
-    <ul class="flex flex-row mx-4 my-4 gap-x-2">
+    <ul class="flex flex-row mx-4 my-4 gap-y-2 gap-x-2 flex-wrap">
         {
             skills.ACTUALLY.map((skill) => (
                 <li>
@@ -132,7 +132,7 @@ const skills = {
         These are the new programming languages, libraries, and frameworks I'm
         actively learning to enhance my skills and stay updated.
     </p>
-    <ul class="flex flex-row mx-4 my-4 gap-x-2">
+    <ul class="flex flex-row mx-4 my-4 gap-y-2 gap-x-2 flex-wrap">
         {
             skills.LEARNING.map((skill) => (
                 <li>
@@ -152,7 +152,7 @@ const skills = {
     <p>
         These are the technologies I'm excited to explore for my professional growth.
     </p>
-    <ul class="flex flex-row mx-4 my-4 gap-x-2">
+    <ul class="flex flex-row mx-4 my-4 gap-y-2 gap-x-2 flex-wrap">
         {
             skills.INTERESTED.map((skill) => (
                 <li>

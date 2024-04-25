@@ -1,20 +1,25 @@
 ---
+import Email from "../icons/Email.astro";
+
 const email = "jeallomo@gmail.com";
 ---
 
-<div class="flex items-center mt-4">
-    <input
-        id="emailInput"
-        type="text"
-        value={email}
-        readonly
-        class="bg-gray-100 text-gray-700 border border-gray-300 rounded-md px-4 py-2 font-bold"
-    />
-    <button
-        class="bg-blue-500 text-white font-bold py-2 px-4 rounded click"
-    >
-        Copy
-    </button>
+<div class="w-full max-w-[16rem]">
+    <div class="relative">
+        <input
+            id="emailInput"
+            type="text"
+            class="click col-span-6 bg-gray-50 border border-gray-300 text-black/90 text-sm rounded-lg block w-full p-2.5 font-bold"
+            value={email}
+            disabled
+            readonly
+        />
+        <button
+            class=" click absolute end-2 top-1/2 -translate-y-1/2 text-gray-500 rounded-lg p-2 inline-flex items-center justify-center"
+        >
+            <Email class=" size-6"/>
+        </button>
+    </div>
 </div>
 
 <script>
