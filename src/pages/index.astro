@@ -11,11 +11,11 @@ import Skills from "../components/Skills.astro";
 import SkillIcon from "../icons/SkillIcon.astro";
 import LinkButton from "../components/LinkButton.astro";
 import GitHub from "../icons/GitHub.astro";
-import Download from "../icons/Download.astro";
-import DownloadButton from "../components/DownloadButton.astro";
 import FAQ from "../components/FAQ.astro";
 import Footer from "../components/Footer.astro";
 import CopyToClipboard from "../components/CopyToClipboard.astro";
+import DownloadButton from "../components/DownloadButton.astro";
+import Download from "../icons/Download.astro";
 
 const imgAlt = "Jesús Lozada";
 const email = "jeallomo@gmail.com";
@@ -24,25 +24,26 @@ const email = "jeallomo@gmail.com";
 <Layout title="Jesus Lozada - Backend Developer">
 	<Header />
 	<main>
-		<SectionContainer class="pt-48 pb-10" id="home">
-			<div class="flex flex-row">
+		<SectionContainer class="pt-24 md:pt-48 md:pb-10" id="home">
+			<div class="flex flex-col md:flex-row">
 				<img
-					class="size-32 rounded-full"
+					class="size-3/5 mx-auto rounded-full md:size-40 md:ms-0"
 					src="/jesuslozada.webp"
 					alt={imgAlt}
 				/>
-				<div class="ml-12">
+				<div class="mx-8 mt-12 md:ml-12 md:mx-0 md:mt-0">
 					<h2 class="text-3xl font-bold">Hi, I'm</h2>
-					<h1 class="text-4xl">
-						<span class="text-3xl">name=</span>
-						<strong class=`text-[#FF8000]`>Jesús</strong>
-						[<strong class="text-[#FF8000]">"Lozada"</strong>]
-					</h1>
-					<Badge>
-						<CodeIcon />
-						<p class="text-[#ec7c26]">Back-end Dev</p>
-					</Badge>
-					<p class="text-pretty mt-4">
+					<div class="flex flex-col justify-center">
+						<h1 class="text-6xl">
+							<strong class=`text-[#FF8000]`>Jesús </strong>
+							<strong class="text-[#FF8000]">Lozada</strong>
+						</h1>
+						<Badge>
+							<CodeIcon />
+							<p class="text-[#ec7c26]">Back-end Dev</p>
+						</Badge>
+					</div>
+					<p class="text-pretty mt-12">
 						With experience in Python, Java, and JavaScript
 						(Node.js), I have a keen interest in architectural
 						concepts and design patterns, such as Hexagonal
@@ -50,40 +51,50 @@ const email = "jeallomo@gmail.com";
 						Colombia, I'm excited to continue learning and growing
 						alongside a development team.
 					</p>
-					<div class="flex items-end justify-start mt-6 gap-x-4">
+					<div
+						class="flex flex-col md:flex-row md:items-end justify-start mt-12 gap-y-4 gap-x-4"
+					>
+						<div class="md:hidden">
+							<DownloadButton
+								href="/CV.pdf"
+								color="bg-[#FF8000]"
+								name="CV_Jesus_Lozada.pdf"
+							>
+								<Download class="size-4" />
+								Download my CV!
+							</DownloadButton>
+						</div>
 						<LinkButton href="https://github.com/SrMudblood">
 							<GitHub class="size-6" />
 							Check out my Github!
 						</LinkButton>
-						<DownloadButton
-							href="/CV.pdf"
-							color="bg-[#FF8000]"
-							name="CV_Jesus_Lozada.pdf"
-						>
-							<Download class="size-6" />
-							Download my CV!
-						</DownloadButton>
+						<CopyToClipboard />
 					</div>
-					<CopyToClipboard />
 				</div>
 			</div>
 		</SectionContainer>
 		<SectionContainer id="projects" class="pt-10 mt-16">
-			<div class="flex flex-row items-center">
+			<div
+				class="flex flex-row items-center justify-center md:justify-start"
+			>
 				<CodeIcon class="size-10" />
 				<h1 class="text-4xl font-bold ml-2">Projects</h1>
 			</div>
 			<Projects class="flex flex-col" />
 		</SectionContainer>
-		<SectionContainer id="skills" class="pt-20 mt-28">
-			<div class="flex flex-row items-center">
+		<SectionContainer id="skills" class="pt-20 mt-28 px-4 md:px-0">
+			<div
+				class="flex flex-row items-center justify-center md:justify-start"
+			>
 				<SkillIcon class="size-10" />
 				<h1 class="text-4xl font-bold ml-2">My Skills</h1>
 			</div>
 			<Skills />
 		</SectionContainer>
-		<SectionContainer id="about" class="pt-20 mt-28">
-			<div class="flex flex-row items-center">
+		<SectionContainer id="about" class="pt-20 mt-28 px-8 md:px-0">
+			<div
+				class="flex flex-row items-center justify-center md:justify-start"
+			>
 				<AboutIcon class="size-10" />
 				<h1 class="text-4xl font-bold ml-2">About Me!</h1>
 			</div>
