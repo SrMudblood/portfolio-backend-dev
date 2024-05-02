@@ -17,8 +17,10 @@ import CopyToClipboard from "../components/CopyToClipboard.astro";
 import DownloadButton from "../components/DownloadButton.astro";
 import Download from "../icons/Download.astro";
 
+import perfil from "../assets/jesuslozada.webp"
+import pdf from "../assets/CV.pdf"
+
 const imgAlt = "Jesús Lozada";
-const email = "jeallomo@gmail.com";
 ---
 
 <Layout title="Jesus L. - Backend Developer">
@@ -28,7 +30,7 @@ const email = "jeallomo@gmail.com";
 			<div class="flex flex-col md:flex-row">
 				<img
 					class="size-3/5 mx-auto rounded-full md:size-40 md:ms-0"
-					src="/jesuslozada.webp"
+					src={perfil.src}
 					alt={imgAlt}
 				/>
 				<div class="mx-8 mt-12 md:ml-12 md:mx-0 md:mt-0">
@@ -56,9 +58,9 @@ const email = "jeallomo@gmail.com";
 					>
 						<div class="md:hidden">
 							<DownloadButton
-								href="/CV.pdf"
+								href={pdf}
 								color="bg-[#FF8000]"
-								name="CV_Jesus_Lozada.pdf"
+								name="CV-Jesus-Lozada.pdf"
 							>
 								<Download class="size-4" />
 								Download my CV!

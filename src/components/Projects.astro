@@ -4,6 +4,8 @@ import GitHubIcon from "../icons/GitHub.astro";
 import Python from "../icons/Python.astro";
 import LinkButton from "./LinkButton.astro";
 
+import testify from "../assets/testify_api.webp"
+
 const tags = {
     PYTHON: {
         icon: Python,
@@ -22,7 +24,7 @@ const projects = [
         title: "TESTity API - Random Data Generator",
         description:
             "Random Data API designed to provide developers with easily accessible random data for testing purposes. Developers can request JSON objects representing various entities, such as people, generated with random information. This enables seamless testing of systems that rely on diverse data inputs.",
-        image: "/testify_api.webp",
+        image: testify,
         tags: [tags.PYTHON,tags.DJANGO],
         github: "https://github.com/SrMudblood/TESTify-API",
         link: "",
@@ -40,7 +42,7 @@ const projects = [
                             alt={title}
                             class="w-full md:rounded-3xl"
                             loading="lazy"
-                            src={image}
+                            src={image.src}
                         />
                     </div>
                 </div>

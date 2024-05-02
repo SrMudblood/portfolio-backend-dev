@@ -2,6 +2,8 @@
 import Download from "../icons/Download.astro";
 import DownloadButton from "./DownloadButton.astro";
 
+import pdf from "../assets/CV.pdf"
+
 const navItems = [
   {
     title: "Home",
@@ -43,9 +45,9 @@ const navItems = [
   </nav>
   <div class="absolute right-6 md:visible button">
     <DownloadButton
-      href="/CV.pdf"
+      href={pdf}
       color="bg-[#FF8000]"
-      name="CV_Jesus_Lozada.pdf"
+      name="CV-Jesus-Lozada.pdf"
     >
       <Download class="size-4" />
       Download my CV!
